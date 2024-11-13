@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panń_Coders || Store Marketing</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('https://files.catbox.moe/s5zhnk.jpg'); /* Ganti dengan URL gambar latar belakang */
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+.header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    text-align: center;
+}
+.search-bar {
+    margin: 20px auto;
+    max-width: 600px;
+}
+.search-bar input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+.search-bar input[type="submit"] {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+}
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin: 20px;
+}
+.product {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    flex: none;
+    width: 200px;
+    scroll-snap-align: start;
+}
+.product img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+.button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    text-decoration: none; /* Menghilangkan garis bawah */
+    display: inline-block; /* Agar tombol berfungsi seperti tombol */
+}
+.button:hover {
+    background-color: #218838;
+}
+.description {
+    display: none; /* Sembunyikan deskripsi secara default */
+    margin-top: 10px;
+}
+h2 {
+    text-align: center; /* Memusatkan teks h2 */
+}
+</style>
+<script>
+function toggleDescription(id) {
+    var desc = document.getElementById(id);
+    if (desc.style.display === "none") {
+        desc.style.display = "block"; // Tampilkan deskripsi
+    } else {
+        desc.style.display = "none"; // Sembunyikan deskripsi
+    }
+}
+function searchProducts() {
+    var input = document.getElementById('searchInput').value.toLowerCase();
+    var products = document.getElementsByClassName('product');
+
+    for (var i = 0; i < products.length; i++) {
+        var title = products[i].getElementsByTagName('h2')[0].innerText.toLowerCase();
+        if (title.includes(input)) {
+            products[i].style.display = ""; // Tampilkan produk
+        } else {
+            products[i].style.display = "none"; // Sembunyikan produk
+        }
+    }
+}
+</script>
+</head>
+<body>
+<div class="header">
+    <h1>Selamat Datang di Toko Kami</h1>
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Cari produk...">
+        <input type="submit" value="Cari" onclick="searchProducts()">
+    </div>
+</div>
+
+<h2>Panel Pterodactyl</h2>
+<div class="carousel">
+    <div class="product">
+        <img src="https://files.catbox.moe/qovd8a.jpg" alt="Produk 1">
+        <h2>Panel 1GB</h2>
+        <p>Rp1.000</p>
+        <a href="https://wa.me/6288246327669?text=halo+kak+saya+mau+beli+panel+1gb+yang+Rp1.000+nya+yaa" class="button">Order</a>
+        <button class="button" onclick="toggleDescription('desc1')">Read More</button>
+        <div id="desc1" class="description">
+            <p>Panel Pterodactyl Yang Support Run Bot, Server Minecraft, Dan Lainnya</p>
+        </div>
+    </div>
+    <div class="product">
+        <img src="https://files.catbox.moe/qovd8a.jpg" alt="Produk 2">
+        <h2>Panel 2GB</h2>
+        <p>Rp2.000</p>
+        <a href="https://wa.me/6288246327669?text=halo+kak+saya+mau+beli+panel+2gb+yang+Rp2.000+nya+yaa" class="button">Order</a>
+        <button class="button" onclick="toggleDescription('desc2')">Read More</button>
+        <div id="desc2" class="description">
+            <p>Panel Pterodactyl Yang Support Run Bot, Server Minecraft, Dan Lainnya</p>
+        </div>
+    </div>
+    <div class="product">
+        <img src="https://files.catbox.moe/qovd8a.jpg" alt="Produk 3">
+        <h2>Panel 3GB</h2>
+        <p>Rp3.000</p>
+        <a href="https://wa.me/6288246327669?text=halo+kak+saya+mau+beli+panel+3gb+yang+Rp3.000+nya+yaa" class="button">Order</a>
+        <button class="button" onclick="toggleDescription('desc3')">Read More</button>
+        <div id="desc3" class="description">
+            <p>Panel Pterodactyl Yang Support Run Bot, Server Minecraft, Dan Lainnya</p>
+        </div>
+    </div>
+    <div class="product">
+        <img src="https://files.catbox.moe/qovd8a.jpg" alt="Produk 4">
+        <h2>Panel 4GB</h2>
+        <p>Rp4.000</p>
+        <a href="https://wa.me/6288246327669?text=halo+kak+saya+mau+beli+panel+4gb+yang+Rp4.000+nya+yaa" class="button">Order</a>
+        <button class="button" onclick="toggleDescription('desc4')">Read More</button>
+        <div id="desc4" class="description">
+            <p>Panel Pterodactyl Yang Support Run Bot, Server Minecraft, Dan Lainnya</p>
+        </div>
+    </div>
+    <div class="product">
+        <img src="https://files.catbox.moe/qovd8a.jpg" alt="Produk 5">
+        <h2>Panel 5GB</h2>
+        <p>Rp5.000</p>
+        <a href="https://wa.me/6288246327669?text=halo+kak+saya+mau+beli+panel+5gb+yang+Rp5.000+nya+yaa" class="button">Order</a>
+        <button class="button" onclick="toggleDescription('desc5')">Read More</button>
+        <div id="desc5" class="description">
+            <p>Panel Pterodactyl Yang Support Run Bot, Server Minecraft, Dan Lainnya</p>
+        </div>
+    </div>
+    <div class="product">
+        <img src="https://files.catbox.moe/qovd8a.jpg" alt="Produk 6">
+        <h2>Panel 6GB</h2>
+        <p>Rp6.000</p>
+        <a href="https://wa.me/6288246327669?text=halo+kak+saya+mau+beli+panel+6gb+yang+Rp6.000+nya+yaa" class="button">Order</a>
+        <button class="button" onclick="toggleDescription('desc6')">Read More</button>
+        <div id="desc6" class="description">
+            <p>Panel Pterodactyl Yang Support Run Bot, Server Minecraft, Dan Lainnya</p>
+        </div>
+    </div>
+    <div class="product">
+        <img src="https://files.catbox.moe/qovd8a.jpg" alt="Produk 7">
+        <h2>Panel Unlimited</h2>
+        <p>Rp9.000</p>
+        <a href="https://wa.me/6288246327669?text=halo+kak+saya+mau+beli+panel+unli+yang+Rp9.000+nya+yaa" class="button">Order</a>
+        <button class="button" onclick="toggleDescription('desc7')">Read More</button>
+        <div id="desc7" class="description">
+            <p>Panel Pterodactyl Yang Support Run Bot, Server Minecraft, Dan Lainnya</p>
+        </div>
+    </div>
+</div>
+
+<h2>Sewa Bot MD</h2>
+<div class="carousel">
+    <div class="product">
+        <img src="https://files.catbox.moe/qovd8a.jpg" alt="Produk 8">
+        <h2>7 Days</h2>
+        <p>Rp9.000</p>
+        <a href="https://wa.me/6288246327669?text=halo+kak+saya+mau+beli+sewa+bot+1h+yang+Rp9.000+nya+yaa" class="button">Order</a>
+        <button class="button" onclick="toggleDescription('desc8')">Read More</button>
+        <div id="desc8" class="description">
+            <p>Sewa Bot MD Yang mempunyai fitur 1.000 dan bisa main games dan jaga group.</p>
+        </div>
+    </div>
+    <div class="product">
+        <img src="https://files.catbox.moe/qovd8a.jpg" alt="Produk 9">
+        <h2>14 Days</h2>
+        <p>Rp16.000</p>
+        <a href="https://wa.me/6288246327669?text=halo+kak+saya+mau+beli+sewa+bot+14h+yang+Rp16.000+nya+yaa" class="button">Order</a>
+        <button class="button" onclick="toggleDescription('desc9')">Read More</button>
+        <div id="desc9" class="description">
+            <p>Sewa Bot MD Yang mempunyai fitur 1.000 dan bisa main games dan jaga group.</p>
+        </div>
+    </div>
+    <div class="product">
+        <img src="https://files.catbox.moe/qovd8a.jpg" alt="Produk 10">
+        <h2>30 Days</h2>
+        <p>Rp32.000</p>
+        <a href="https://wa.me/6288246327669?text=halo+kak+saya+mau+beli+sewa+bot+30h+yang+Rp32.000+nya+yaa" class="button">Order</a>
+        <button class="button" onclick="toggleDescription('desc10')">Read More</button>
+        <div id="desc10" class="description">
+            <p>Sewa Bot MD Yang mempunyai fitur 1.000 dan bisa main games dan jaga group.</p>
+        </div>
+    </div>
+</div>
+<h2>Source Code</h2>
+<div class="carousel">
+    <div class="product">
+        <img src="https://files.catbox.moe/qovd8a.jpg" alt="Produk 11">
+        <h2>NakanoMD</h2>
+        <p>Rp40.000</p>
+        <a href="https://wa.me/6288246327669?text=halo+kak+saya+mau+beli+sc+nakanomd+yang+Rp40.000+nya+yaa" class="button">Order</a>
+        <button class="button" onclick="toggleDescription('desc11')">Read More</button>
+        <div id="desc11" class="description">
+            <p>Source Code Yang Mempunyai Fitur 900, Berguna Untuk Jaga group, main RPG, dan lainnya</p>
+        </div>
+    </div>
+    <div class="product">
+        <img src="https://files.catbox.moe/qovd8a.jpg" alt="Produk 12">
+        <h2>NakanoMD + Panel Unli</h2>
+        <p>Rp45.000</p>
+        <a href="https://wa.me/6288246327669?text=halo+kak+saya+mau+beli+sc+nakanomd+sama+panel+unli+yang+Rp45.000+nya+yaa" class="button">Order</a>
+        <button class="button" onclick="toggleDescription('desc12')">Read More</button>
+        <div id="desc12" class="description">
+            <p>Source Code Yang Mempunyai Fitur 900, Saat Membeli Ini Akan Mendapatkan 1 Panel Unli, Bot Tersebut Berguna Untuk Jaga group, main RPG, dan lainnya</p>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
